@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Hello</h1>
+    {% if user.is_authenticated %}
+        <a class="btn btn-secondary" href="{% url 'logout' %}" role="button">logout</a>
+    {% endif %}
+
+{% endblock %}
