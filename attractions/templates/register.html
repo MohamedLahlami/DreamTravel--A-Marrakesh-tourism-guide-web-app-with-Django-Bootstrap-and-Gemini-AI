@@ -2,24 +2,24 @@
 {% block content %}
 <div class="col-md-4 offset-md-4">
     <h1 class="display-1">Register</h1>
-    <br/>
+    <br />
     <form method="post" action="">
         {% csrf_token %}
         {% if form.errors %}
-			<div class="alert alert-warning alert-dismissible fade show" role="alert">
-			  {% for field in form %}
-			  	{% if field.errors %}
-			  		{{ field.errors }}
-			  	{% endif %}
-			  {% endfor %}
-			  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-			</div>
-		{% endif %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {% for field in form %}
+            {% if field.errors %}
+            {{ field.errors }}
+            {% endif %}
+            {% endfor %}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        {% endif %}
 
         <!-- Form-->
         {{ form.as_p }}
 
-        <br/>
+        <br />
         <button type="submit" class="btn btn-secondary">Register</button>
         <a class="btn btn-secondary" href="{% url 'index' %}" role="button">Cancel</a>
     </form>

@@ -6,5 +6,6 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("login/", views.login_user, name="login"),
     path("logout/", views.logout_user, name="logout"),
-    path("register/", views.register_user, name="register")
+    path("register/", views.register_user, name="register"),
+    path("chatbot/<str:query>", views.chatbot , name="chatbot"),
 ]
