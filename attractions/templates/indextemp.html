@@ -61,8 +61,8 @@
             <div class="col-md-12">
                 <div class="section-header text-center pb-5">
                     <h2 class="page-title">Explore our catalog</h2>
-                    <p><h5>We offer an online guide to the <span style="color: red">red city</span> like no other.</h5></p>
-                    <p><h5><span style="font-weight: bold;">Remember</span>, even with our detailed guide, there is always more to see and discover on your own, put some sunscreen on and wander around!</h5></p>
+                    <p><h6>We offer an online guide to the <span class="detail-link">red city</span> like no other.</h6></p>
+                    <p><h6><span style="font-weight: bold;">Remember</span>, even with our detailed guide, there is always more to see and discover on your own, put some sunscreen on and wander around!</h6></p>
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
                         Discover Marrakesh's timeless allure as ancient walls whisper tales of dynasties past, bustling souks beckon with vibrant treasures, and hidden gardens offer sanctuaries of serenity amidst the city's vibrant pulse.
                       </p>
                       <div>
-                        <a href="{% url 'index' %}"><button class="btn page-title" type="button">Discover</button></a>
+                        <a href="{% url 'attractions' %}" class="stretched-link detail-link">Discover</a>
                       </div>
                     </div>
                   </div>
@@ -90,8 +90,8 @@
                             Retreat to Marrakesh's luxurious havens where ancient architecture meets modern comfort, where every room is a sanctuary of elegance and tranquility, and where hospitality is woven into every intricate detail.
                           </p>
                           <div>
-                            <a href="{% url 'index' %}"><button class="btn page-title" type="button">Discover</button></a>
-                          </div>
+                            <a href="{% url 'hotels' %}" class="stretched-link detail-link">Discover</a>
+                        </div>
                         </div>
                       </div>
                 </div>
@@ -104,7 +104,7 @@
                         Savor the flavors of Marrakesh as spices mingle in a symphony of taste, where every bite tells a story of culinary craftsmanship and every meal becomes an exquisite journey through the heart of Moroccan cuisine.
                       </p>
                       <div>
-                        <a href="{% url 'index' %}"><button class="btn page-title" type="button">Discover</button></a>
+                        <a href="{% url 'restaurants' %}" class="stretched-link detail-link">Discover</a>
                       </div>
                     </div>
                   </div>
@@ -114,82 +114,88 @@
 </section>
 <!-- catalog section Ends -->
 
-<!-- portfolio starts -->
-<section class="portfolio section-padding" id="portfolio">
+<!-- Featured starts -->
+<section class="portfolio section-padding" id="Featured">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-header text-center pb-5">
-                    <h2>Featured</h2>
+                    <h2 class="page-title">Featured</h2>
                     <p>Checkout our handpicked selection of attractions around the city for some breathtaking memories!</p>
                 </div>
             </div>
         </div>
         <div class="row">
-
             <div class="col-12 col-md-12 col-lg-4">
                 <div class="card text-light text-center bg-white pb-2">
                     <div class="card-body text-dark">
-                        <div class="img-area mb-4"><img alt="" class="img-fluid" src="{% static 'img/project-1.jpg' %}"></div>
-                        <h3 class="card-title">Building Make</h3>
-                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi modi temporibus alias iste. Accusantium?</p><button class="btn bg-warning text-dark">Learn More</button>
+                        <a href="{% url 'attractionDetail' 10 %}" class="stretched-link"></a>
+                        <div class="img-area mb-4"><img alt="" class="img-fluid" src="{% static 'img/Le Jardin Secret.jpg' %}"></div>
+                        <h3 class="card-title">Le Jardin Secret</h3>
+                        <p class="lead">A hidden gem amidst the bustling medina, where lush gardens, stunning architecture, and serene fountains create a tranquil escape from the city's vibrant chaos.</p>
+                        <a href="{% url 'attractionDetail' 10 %}" class="stretched-link detail-link">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-12 col-lg-4">
+                <div class="card text-light text-center bg-white pb-2">
+                    <div class="card-body text-dark">
+                        <div class="img-area mb-4"><img alt="" class="img-fluid" src="{% static 'img/Royal Mansour Marrakech Hotel.jpg' %}"></div>
+                        <h3 class="card-title">Royal Mansour Hotel</h3>
+                        <p class="lead">A palatial oasis in the heart of the ancient medina. Indulge in regal comfort and personalized service, where every moment resonates with Moroccan opulence.</p>
+                        <a href="{% url 'hotelDetail' 1 %}" class="stretched-link detail-link">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-12 col-lg-4">
+                <div class="card text-light text-center bg-white pb-2">
+                    <div class="card-body text-dark">
+                        <div class="img-area mb-4"><img alt="" class="img-fluid" src="{% static 'img/Dar Yacout.jpg' %}"></div>
+                        <h3 class="card-title">Dar Yacout</h3>
+                        <p class="lead">A feast for the senses awaits within its ornate walls, where exquisite cuisine and captivating ambiance intertwine seamlessly. A must-experience destination in the Medina.</p>
+                        <a href="{% url 'restaurantDetail' 11 %}" class="stretched-link detail-link">View</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section><!-- portfolio ends -->
+</section><!-- featured ends -->
 
 <!-- FAQ starts -->
-<section class="team section-padding" id="team">
+<section class="FAQ section-padding" id="FAQ">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-header text-center pb-5">
-                    <h2 class="page-title">FAQ</h2>
-                    <p>Here are some of the most asked questions by tourists in Marrakesh</p>
-                </div>
-            </div>
+        <div class="section-header text-center pb-5">
+            <h2 class="page-title">FAQ</h2>
+            <p><h6>Here are some of the most asked questions by fellow tourists in <span class="detail-link">Marrakesh</h6></p>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <img alt="" class="img-fluid rounded-circle" src="{% static 'img/team-1.jpg' %}">
-                        <h3 class="card-title py-2">Jack Wilson</h3>
-                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ipsam nostrum illo tempora esse quibusdam.</p>
-                        <p class="socials"><i class="bi bi-twitter text-dark mx-1"></i> <i class="bi bi-facebook text-dark mx-1"></i> <i class="bi bi-linkedin text-dark mx-1"></i> <i class="bi bi-instagram text-dark mx-1"></i></p>
-                    </div>
-                </div>
+            <div class="col-lg-4 col-md-12 col-12">
+                <div class="about-img"><img class="img-fluid FAQ-img" src="{% static 'img/riad2.jpg' %}"></div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <img alt="" class="img-fluid rounded-circle" src="{% static 'img/team-2.jpg' %}">
-                        <h3 class="card-title py-2">Jack Wilson</h3>
-                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ipsam nostrum illo tempora esse quibusdam.</p>
-                        <p class="socials"><i class="bi bi-twitter text-dark mx-1"></i> <i class="bi bi-facebook text-dark mx-1"></i> <i class="bi bi-linkedin text-dark mx-1"></i> <i class="bi bi-instagram text-dark mx-1"></i></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <img alt="" class="img-fluid rounded-circle" src="{% static 'img/team-3.jpg' %}">
-                        <h3 class="card-title py-2">Jack Wilson</h3>
-                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ipsam nostrum illo tempora esse quibusdam.</p>
-                        <p class="socials"><i class="bi bi-twitter text-dark mx-1"></i> <i class="bi bi-facebook text-dark mx-1"></i> <i class="bi bi-linkedin text-dark mx-1"></i> <i class="bi bi-instagram text-dark mx-1"></i></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <img alt="" class="img-fluid rounded-circle" src="{% static 'img/team-4.jpg' %}">
-                        <h3 class="card-title py-2">Jack Wilson</h3>
-                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ipsam nostrum illo tempora esse quibusdam.</p>
-                        <p class="socials"><i class="bi bi-twitter text-dark mx-1"></i> <i class="bi bi-facebook text-dark mx-1"></i> <i class="bi bi-linkedin text-dark mx-1"></i> <i class="bi bi-instagram text-dark mx-1"></i></p>
-                    </div>
+            <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-3">
+                <div class="about-text">
+                    <dl class="row">
+                        <dt>What is the best time to visit Marrakech?</dt>
+                        <dd>The best time to visit Marrakech is during the spring (March to May) or fall (September to November) when the weather is mild and pleasant.</dd>
+
+                        <dt>What is the currency used in Marrakech?</dt>
+                        <dd>The currency used in Marrakech, as well as throughout Morocco, is the Moroccan Dirham (MAD).</dd>
+                        
+                        <dt>Do I need a visa to visit Marrakech?</dt>
+                        <dd>Visitors from many countries can enter Morocco visa-free for stays of up to 90 days. However, it's always best to check visa requirements based on your nationality before traveling.</dd>
+                        
+                        <dt>What are the must-visit attractions in Marrakech?</dt>
+                        <dd>Some of the must-visit attractions in Marrakech include Jardin Majorelle, Djemaa el-Fna square, Bahia Palace, Saadian Tombs, and the Koutoubia Mosque.</dd>
+
+                        <dt>Is it safe to visit Marrakech?</dt>
+                        <dd>Marrakech is generally a safe city for tourists. However, as with any destination, it's important to remain vigilant, especially in crowded areas, and to take precautions against petty theft.</dd>
+
+                        <dt>What is the traditional Moroccan cuisine like?</dt>
+                        <dd>Traditional Moroccan cuisine is flavorful and diverse, featuring dishes such as tagine (slow-cooked stews), couscous, pastilla (a savory pie), and various grilled meats. Don't miss trying Moroccan mint tea, a staple beverage.</dd>
+
+                        <dt>What should I wear when visiting Marrakech?</dt>
+                        <dd>Marrakech is a conservative city, so it's best to dress modestly, especially when visiting religious sites. Women may want to wear loose-fitting clothing that covers the shoulders and knees, while men should avoid wearing shorts in certain areas.</dd>
+                    </dl>
                 </div>
             </div>
         </div>
@@ -204,7 +210,7 @@
                 <div class="section-header text-center pb-5">
                     <h2 class="page-title">Contact Us</h2>
                     <p>View the source code of this project on Github:</p>
-                    <a href="https://github.com/MohamedLahlami/DreamTravel---A-tourism-guide-web-app-with-AI-assistance-for-Marrakesh">
+                    <a href="https://github.com/MohamedLahlami/DreamTravel---A-tourism-guide-web-app-with-AI-assistance-for-Marrakesh" class="detail-link">
                         <i class="bi bi-github">Github</i>
                     </a>
                 </div>
@@ -212,11 +218,5 @@
         </div>
     </div>
 </section><!-- contact ends -->
-
-<footer class="bg-dark p-3 text-center">
-    <div class="container">
-        <p class="text-white" style="margin-bottom: 0px; font-size: large;">All Right Reserved By DreamTravel 2024</p>
-    </div>
-</footer>
 
 {% endblock %}

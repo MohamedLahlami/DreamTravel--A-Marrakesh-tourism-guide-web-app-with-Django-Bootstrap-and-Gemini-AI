@@ -1,7 +1,35 @@
 {% extends 'basetemp.html' %}
 {% load static %}
 {% block content %}
-<h1>hello world</h1>
 
+<div class="container d-flex justify-content-around offset-navbar my-sm-5">
+        <div class="col-10">
+          <div class="card pb-2">
+              <img src="{% static attraction.imagePath %}" class="card-img-top" alt="attraction" />
+              <div class="card-body">
+                <h3 class="text-center page-title">{{ attraction.name }}</h3>
+                <p class="card-text">
+                  <dl class="row">
+                    <dt class="col-sm-5">Opening Hours:</dt>
+                    <dd class="col-sm-7">{{ attraction.opening_hours }}</dd>
+
+                    <dt class="col-sm-5">Location:</dt>
+                    <dd class="col-sm-7">{{ attraction.location }}</dd>
+
+                    <dt class="col-sm-5">Accessibility</dt>
+                    <dd class="col-sm-7">{{ attraction.accessibility }}</dd>
+
+                    <dt class="col-sm-5">Entry Fee:</dt>
+                    {% if attraction.entry_fee == 0 %}
+                      <dd class="col-sm-7">Free</dd>
+                    {% else %}
+                      <dd class="col-sm-7">{{ attraction.entry_fee }} MAD</dd>
+                    {% endif %}
+                  </dl>
+                </p>  
+              </div>
+          </div>
+        </div>
+</div>
 
 {% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'basetemp.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container d-flex justify-content-around offset-navbar my-sm-5">
+        <div class="col-10">
+          <div class="card pb-2">
+              <img src="{% static restaurant.imagePath %}" class="card-img-top" alt="restaurant" />
+              <div class="card-body">
+                <h3 class="text-center page-title">{{ restaurant.name }}</h3>
+                <p class="card-text">
+                  <dl class="row">
+                    <dt class="col-sm-5">Location:</dt>
+                    <dd class="col-sm-7">{{ restaurant.location }} MAD</dd>
+
+                    <dt class="col-sm-5">Opening Hours:</dt>
+                    <dd class="col-sm-7">{{ restaurant.opening_hours }}</dd>
+
+                    <dt class="col-sm-5">Atmosphere:</dt>
+                    <dd class="col-sm-7">{{ restaurant.Atmosphere }}</dd>
+
+                    <dt class="col-sm-5">Dedicated Parking:</dt>
+                    {% if restaurant.parking %}
+                    <dd class="col-sm-7">Available</dd>
+                    {% else %}
+                    <dd class="col-sm-7">Not Available</dd>
+                    {% endif %}
+
+                    <dt class="col-sm-5">Reservation:</dt>
+                    <dd class="col-sm-7">{{ restaurant.reservation }}</dd>
+
+                    <dt class="col-sm-5">Accessibility:</dt>
+                    <dd class="col-sm-7">{{ restaurant.accessibility }}</dd>
+
+                    <dt class="col-sm-5">Cuisine:</dt>
+                    <dd class="col-sm-7">{{ restaurant.cuisine }} MAD</dd>
+                    
+                    <dt class="col-sm-5">Alcoholic beverages:</dt>
+                    {% if restaurant.has_alcohol %}
+                    <dd class="col-sm-7">Available</dd>
+                    {% else %}
+                    <dd class="col-sm-7">Not Available</dd>
+                    {% endif %}
+
+                    <dt class="col-sm-5">Price range:</dt>
+                    <dd class="col-sm-7">{{ restaurant.price_range }}</dd>
+                  </dl>
+                </p>  
+              </div>
+          </div>
+        </div>
+</div>
+
+{% endblock %}

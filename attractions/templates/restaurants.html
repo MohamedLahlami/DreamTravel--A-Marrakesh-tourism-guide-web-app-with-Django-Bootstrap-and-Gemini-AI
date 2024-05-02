@@ -6,12 +6,12 @@
     <p class="lead text-center col-12 col-sm-10 mx-auto mx-sm-auto mt-3">
         Savor the flavors of Marrakesh as spices mingle in a symphony of taste, where every bite tells a story of culinary craftsmanship and every meal becomes an exquisite journey through the heart of Moroccan cuisine.
     </p>
-    {% if hotels %}
+    {% if restaurants %}
     <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
       {% for restaurant in restaurants %}
       <div class="col-12 col-md-12 col-lg-4">
         <div class="card pb-2">
-            <img src="{% static 'img/koutoubia.jpg' %}" class="card-img-top" alt="restaurant" />
+            <img src="{% static restaurant.imagePath %}" class="card-img-top" alt="restaurant" />
             <div class="card-body">
               <h4>{{ restaurant.name }}</h4>
               <p class="card-text">
@@ -29,6 +29,7 @@
         </div>
       </div>
       {% endfor %}
+    </div>
     {% endif %}
 </div>
 {% endblock %}

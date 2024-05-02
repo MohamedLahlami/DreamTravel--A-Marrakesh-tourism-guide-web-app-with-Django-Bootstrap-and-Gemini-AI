@@ -11,7 +11,7 @@
       {% for hotel in hotels %}
       <div class="col-12 col-md-12 col-lg-4">
         <div class="card pb-2">
-            <img src="{% static 'img/koutoubia.jpg' %}" class="card-img-top" alt="hotel" />
+            <img src="{% static hotel.imagePath %}" class="card-img-top" alt="hotel" />
             <div class="card-body">
               <h4>{{ hotel.name }}</h4>
               <p class="card-text">
@@ -29,6 +29,7 @@
         </div>
       </div>
       {% endfor %}
+      </div>
     {% endif %}
 </div>
 {% endblock %}

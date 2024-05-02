@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm
@@ -65,6 +65,8 @@ def register_user(request):
         form = SignUpForm()
         return render(request, 'register.html', {'form':form})
 
+
+#result pages view
 def attractions(request):
     attractions = Attraction.objects.all()
     for attraction in attractions:
@@ -73,23 +75,44 @@ def attractions(request):
 
 def restaurants(request):
     restaurants = Restaurant.objects.all()
+    for restaurant in restaurants:
+        restaurant.imagePath = 'img/' + restaurant.name + '.jpg'
     return render(request, 'restaurants.html', {"restaurants":restaurants})
 
 def hotels(request):
     hotels = Hotel.objects.all()
+    for hotel in hotels:
+        hotel.imagePath = 'img/' + hotel.name + '.jpg'
     return render(request, 'hotels.html', {"hotels":hotels})
 
+
+#detail pages views
 def attractionDetail(request, id):
-    return render(request, 'attractionDetail.html', {})
+    try:
+        attraction = Attraction.objects.get(id=id)
+    except Attraction.DoesNotExist:
+        return render(request, '404.html', {})
+    attraction.imagePath = 'img/' + attraction.name + '.jpg'
+    return render(request, 'attractionDetail.html', {"attraction": attraction})
 
 def hotelDetail(request, id):
-    return render(request, 'hotelDetail.html', {})
-
+    try:
+        hotel = Hotel.objects.get(id=id)
+    except Hotel.DoesNotExist:
+        return render(request, '404.html', {})
+    hotel.imagePath = 'img/' + hotel.name + '.jpg'
+    return render(request, 'hotelDetail.html', {"hotel": hotel})
 
 def restaurantDetail(request, id):
-    return render(request, 'restaurantDetail.html', {})
+    try:
+        restaurant = Restaurant.objects.get(id=id)
+    except restaurant.DoesNotExist:
+        return render(request, '404.html', {})    
+    restaurant.imagePath = 'img/' + restaurant.name + '.jpg'
+    return render(request, 'restaurantDetail.html', {"restaurant": restaurant})
 
 
+#chatbot API view
 def chatbot(request, query = None):
     if query is None:
         return redirect('index')

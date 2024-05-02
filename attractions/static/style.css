@@ -97,13 +97,13 @@ body {
 .portfolio .card {
 	box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
 }
-.team .card {
+.FAQ .card {
 	box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
 }
 .services .card-body i {
 	font-size: 50px;
 }
-.team .card-body i {
+.FAQ .card-body i {
 	font-size: 20px;
 }
 
@@ -124,6 +124,12 @@ a i {
 	font-size: large;
 	font-weight: bold;
 }
+
+.FAQ-img{
+	border:2px solid gray;
+	border-radius: 10px;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.carousel-caption {
 		bottom: 370px;
