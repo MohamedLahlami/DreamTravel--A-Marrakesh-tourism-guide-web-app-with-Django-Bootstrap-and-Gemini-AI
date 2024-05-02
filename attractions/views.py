@@ -93,6 +93,7 @@ def attractionDetail(request, id):
     except Attraction.DoesNotExist:
         return render(request, '404.html', {})
     attraction.imagePath = 'img/' + attraction.name + '.jpg'
+    attraction.mapURL = 'https://www.google.com/maps/search/' + attraction.name
     return render(request, 'attractionDetail.html', {"attraction": attraction})
 
 def hotelDetail(request, id):
@@ -101,6 +102,7 @@ def hotelDetail(request, id):
     except Hotel.DoesNotExist:
         return render(request, '404.html', {})
     hotel.imagePath = 'img/' + hotel.name + '.jpg'
+    hotel.mapURL = 'https://www.google.com/maps/search/' + hotel.name
     return render(request, 'hotelDetail.html', {"hotel": hotel})
 
 def restaurantDetail(request, id):
@@ -109,6 +111,7 @@ def restaurantDetail(request, id):
     except restaurant.DoesNotExist:
         return render(request, '404.html', {})    
     restaurant.imagePath = 'img/' + restaurant.name + '.jpg'
+    restaurant.mapURL = 'https://www.google.com/maps/search/' + restaurant.name
     return render(request, 'restaurantDetail.html', {"restaurant": restaurant})
 
 
