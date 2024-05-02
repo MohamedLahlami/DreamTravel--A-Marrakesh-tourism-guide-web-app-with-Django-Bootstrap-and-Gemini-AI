@@ -1,0 +1,38 @@
+{% extends 'basetemp.html' %}
+{% load static %}
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center offset-navbar page-title">ATTRACTIONS</h1>
+    <p class="lead text-center col-12 col-sm-10 mx-auto mx-sm-auto mt-3">
+      Discover Marrakesh's timeless allure as ancient walls whisper tales of dynasties past, bustling souks beckon with vibrant treasures, and hidden gardens offer sanctuaries of serenity amidst the city's vibrant pulse.
+    </p>
+    {% if attractions %}
+    <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+      {% for attraction in attractions %}
+      <div class="col-12 col-md-12 col-lg-4">
+        <div class="card pb-2">
+            <img src="{% static attraction.imagePath %}" class="card-img-top" alt="attraction" />
+            <div class="card-body">
+              <h4>{{ attraction.name }}</h4>
+              <p class="card-text">
+                <dl class="row">
+                    <dt class="col-sm-5">Opening Hours: </dt>
+                    <dd class="col-sm-7">{{ attraction.opening_hours }}</dd>
+                    <dt class="col-sm-5">Entry Fee: </dt>
+                    {% if attraction.entry_fee == 0 %}
+                      <dd class="col-sm-7">Free</dd>
+                    {% else %}
+                      <dd class="col-sm-7">{{ attraction.entry_fee }} MAD</dd>
+                    {% endif %}
+                </dl>
+              </p>
+              <div class="mb-1 d-flex justify-content-around">
+                <a href="{% url 'attractionDetail' attraction.id %}" class="detail-link">Discover</a>
+              </div>
+            </div>
+        </div>
+      </div>
+      {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

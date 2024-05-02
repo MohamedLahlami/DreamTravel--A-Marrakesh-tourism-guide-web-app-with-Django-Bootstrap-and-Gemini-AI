@@ -4,6 +4,7 @@ from django.contrib import messages
 from .forms import SignUpForm
 from django.http import HttpResponse, JsonResponse, HttpResponseNotFound
 from django.template import loader
+from attractions.models import *
 import google.generativeai as genai
 import os
 import markdown
@@ -13,7 +14,11 @@ os.environ['GOOGLE_API_KEY'] = "AIzaSyD44p4MRPNGzYFtAfjwh1jWbVC21UhcbMY"
 genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
 model = genai.GenerativeModel('gemini-pro')
 
+def temp(request):
+    return render(request, 'temp.html')
 
+def index(request):
+    return render(request, 'indextemp.html')  ##################
 
 def login_user(request):
     if request.user.is_authenticated:
@@ -32,13 +37,15 @@ def login_user(request):
     
     return render(request, 'login.html')
 
-def index(request):
-    return render(request, 'index.html')
 
 def logout_user(request):
-    logout(request)
-    messages.success(request, "You have been logged out.")
-    return redirect('login')
+    if request.user.is_authenticated:
+        logout(request)
+        messages.success(request, "You have been logged out.")
+        return redirect('login')
+    else:
+        return redirect('index')
+
 
 def register_user(request):
     if request.user.is_authenticated:
@@ -57,14 +64,40 @@ def register_user(request):
     else:
         form = SignUpForm()
         return render(request, 'register.html', {'form':form})
-    return render(request, 'register.html', {'form':form})
+
+def attractions(request):
+    attractions = Attraction.objects.all()
+    for attraction in attractions:
+        attraction.imagePath = 'img/' + attraction.name + '.jpg'
+    return render(request, 'attractions.html', {"attractions":attractions})
+
+def restaurants(request):
+    restaurants = Restaurant.objects.all()
+    return render(request, 'restaurants.html', {"restaurants":restaurants})
+
+def hotels(request):
+    hotels = Hotel.objects.all()
+    return render(request, 'hotels.html', {"hotels":hotels})
+
+def attractionDetail(request, id):
+    return render(request, 'attractionDetail.html', {})
+
+def hotelDetail(request, id):
+    return render(request, 'hotelDetail.html', {})
 
 
+def restaurantDetail(request, id):
+    return render(request, 'restaurantDetail.html', {})
 
-def chatbot(request, query):
+
+def chatbot(request, query = None):
+    if query is None:
+        return redirect('index')
     if request.user.is_authenticated:
         response_text = markdown.markdown(model.generate_content(query).text)
         response_json = JsonResponse({'name': 'AI','response_data': response_text}, status=200, safe=False)
         return response_json
     else:
         return redirect('login')
+    
+

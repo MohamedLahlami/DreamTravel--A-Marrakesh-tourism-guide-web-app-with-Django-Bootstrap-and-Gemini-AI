@@ -1,13 +1,11 @@
 from django.db import models
 
 class Attraction(models.Model):
-    
     name = models.CharField(max_length=50)
     entry_fee = models.IntegerField(default=0)
     opening_hours = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
     accessibility = models.CharField(max_length=100)
-
     def __str__(self):
         return self.name
 
@@ -23,7 +21,6 @@ class Restaurant(models.Model):
     accessibility = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
     cuisine = models.CharField(max_length=100)
-
     def __str__(self):
         return self.name
 
@@ -36,11 +33,5 @@ class Hotel(models.Model):
     services = models.CharField(max_length=200)
     dining_options = models.CharField(max_length=200)
     pet_policy = models.CharField(max_length=200)
-
     def __str__(self):
         return self.name
-
-
-
-
-

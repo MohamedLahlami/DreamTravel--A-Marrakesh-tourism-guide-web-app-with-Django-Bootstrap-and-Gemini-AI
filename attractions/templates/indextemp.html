@@ -1,0 +1,222 @@
+{% extends 'basetemp.html' %}
+{% load static %}
+{% block content %}
+<div class="carousel slide" data-bs-ride="carousel" id="carouselExampleIndicators">
+    <div class="carousel-indicators">
+        <button aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExampleIndicators" type="button"></button> <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators" type="button"></button> <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators" type="button"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img alt="..." class="d-block w-100" src="{% static 'img/marrakech_horizon1.jpg' %}">
+            <div class="carousel-caption">
+                <h5>Welcome To Your Dream</h5>
+                <p>Indulge in Marrakesh's opulent charm, where every moment is a decadent dream waiting to be savored.</p>
+                <p><a class="btn btn-warning mt-3" href="#catalog">Learn More</a></p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img alt="..." class="d-block w-100" src="{% static 'img/Jemaa el-Fna.jpg' %}">
+            <div class="carousel-caption">
+                <h5>Canvas of Culture, Tapestry of Spirituality</h5>
+                <p>Wander the narrow alleys of the Medina, where centuries-old craftsmanship coexists with trendy boutiques and art galleries, embodying the city's timeless allure.</p>
+                <p><a class="btn btn-warning mt-3" href="#catalog">Learn More</a></p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img alt="..." class="d-block w-100" src="{% static 'img/Menara Gardens.jpg' %}">
+            <div class="carousel-caption">
+                <h5>Harmony in Contrast</h5>
+                <p>Experience the juxtaposition of tranquility and vibrancy in Marrakesh, from serene sunsets over tranquil riads to the pulsating energy of the bustling nightlife. </p>
+                <p><a class="btn btn-warning mt-3" href="#catalog">Learn More</a></p>
+            </div>
+        </div>
+    </div><button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="visually-hidden">Previous</span></button> <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="visually-hidden">Next</span></button>
+</div>
+
+<!-- about section starts -->
+<section class="about section-padding" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-12 col-12">
+                <div class="about-img"><img alt="" class="img-fluid" src="{% static 'img/street.jpeg' %}"></div>
+            </div>
+            <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
+                <div class="about-text">
+                    <h2 class="page-title">SAY HELLO TO THE RED CITY</h2>
+                    <p>
+                        Between tradition and modernity, Marrakech is the promise of unequalled sensations. Strolling the Jemaa El-Fna square and the souks with their shimmering colours and oriental smells, the red city offers you a complete change of scenery. Horse-drawn carriage rides, sunny terraces, travelling artists and other day and night activities will give a tates of wishful comeback.
+                    </p>
+                    <a class="btn btn-warning" href="#catalog">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- about section Ends -->
+
+
+<!-- catalog section Starts -->
+<section class="services section-padding" id="catalog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header text-center pb-5">
+                    <h2 class="page-title">Explore our catalog</h2>
+                    <p><h5>We offer an online guide to the <span style="color: red">red city</span> like no other.</h5></p>
+                    <p><h5><span style="font-weight: bold;">Remember</span>, even with our detailed guide, there is always more to see and discover on your own, put some sunscreen on and wander around!</h5></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-4">
+                <div class="card text-white text-center bg-dark pb-2">
+                    <img src="{% static 'img/Koutoubia Mosque.jpg' %}" class="card-img-top"/>
+                    <div class="card-body">
+                      <h4>Attractions</h4>
+                      <p class="card-text">
+                        Discover Marrakesh's timeless allure as ancient walls whisper tales of dynasties past, bustling souks beckon with vibrant treasures, and hidden gardens offer sanctuaries of serenity amidst the city's vibrant pulse.
+                      </p>
+                      <div>
+                        <a href="{% url 'index' %}"><button class="btn page-title" type="button">Discover</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-4">
+                    <div class="card text-white text-center bg-dark pb-2">
+                        <img src="{% static 'img/riad3.jpg' %}" class="card-img-top" />
+                        <div class="card-body">
+                          <h4>Hotels</h4>
+                          <p class="card-text">
+                            Retreat to Marrakesh's luxurious havens where ancient architecture meets modern comfort, where every room is a sanctuary of elegance and tranquility, and where hospitality is woven into every intricate detail.
+                          </p>
+                          <div>
+                            <a href="{% url 'index' %}"><button class="btn page-title" type="button">Discover</button></a>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-4">
+                <div class="card text-white text-center bg-dark pb-2">
+                    <img src="{% static 'img/restaurant1.jpg' %}" class="card-img-top" />
+                    <div class="card-body">
+                      <h4>Restaurants</h4>
+                      <p class="card-text">
+                        Savor the flavors of Marrakesh as spices mingle in a symphony of taste, where every bite tells a story of culinary craftsmanship and every meal becomes an exquisite journey through the heart of Moroccan cuisine.
+                      </p>
+                      <div>
+                        <a href="{% url 'index' %}"><button class="btn page-title" type="button">Discover</button></a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- catalog section Ends -->
+
+<!-- portfolio starts -->
+<section class="portfolio section-padding" id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header text-center pb-5">
+                    <h2>Featured</h2>
+                    <p>Checkout our handpicked selection of attractions around the city for some breathtaking memories!</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-12 col-md-12 col-lg-4">
+                <div class="card text-light text-center bg-white pb-2">
+                    <div class="card-body text-dark">
+                        <div class="img-area mb-4"><img alt="" class="img-fluid" src="{% static 'img/project-1.jpg' %}"></div>
+                        <h3 class="card-title">Building Make</h3>
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi modi temporibus alias iste. Accusantium?</p><button class="btn bg-warning text-dark">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- portfolio ends -->
+
+<!-- FAQ starts -->
+<section class="team section-padding" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header text-center pb-5">
+                    <h2 class="page-title">FAQ</h2>
+                    <p>Here are some of the most asked questions by tourists in Marrakesh</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img alt="" class="img-fluid rounded-circle" src="{% static 'img/team-1.jpg' %}">
+                        <h3 class="card-title py-2">Jack Wilson</h3>
+                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ipsam nostrum illo tempora esse quibusdam.</p>
+                        <p class="socials"><i class="bi bi-twitter text-dark mx-1"></i> <i class="bi bi-facebook text-dark mx-1"></i> <i class="bi bi-linkedin text-dark mx-1"></i> <i class="bi bi-instagram text-dark mx-1"></i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img alt="" class="img-fluid rounded-circle" src="{% static 'img/team-2.jpg' %}">
+                        <h3 class="card-title py-2">Jack Wilson</h3>
+                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ipsam nostrum illo tempora esse quibusdam.</p>
+                        <p class="socials"><i class="bi bi-twitter text-dark mx-1"></i> <i class="bi bi-facebook text-dark mx-1"></i> <i class="bi bi-linkedin text-dark mx-1"></i> <i class="bi bi-instagram text-dark mx-1"></i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img alt="" class="img-fluid rounded-circle" src="{% static 'img/team-3.jpg' %}">
+                        <h3 class="card-title py-2">Jack Wilson</h3>
+                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ipsam nostrum illo tempora esse quibusdam.</p>
+                        <p class="socials"><i class="bi bi-twitter text-dark mx-1"></i> <i class="bi bi-facebook text-dark mx-1"></i> <i class="bi bi-linkedin text-dark mx-1"></i> <i class="bi bi-instagram text-dark mx-1"></i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img alt="" class="img-fluid rounded-circle" src="{% static 'img/team-4.jpg' %}">
+                        <h3 class="card-title py-2">Jack Wilson</h3>
+                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ipsam nostrum illo tempora esse quibusdam.</p>
+                        <p class="socials"><i class="bi bi-twitter text-dark mx-1"></i> <i class="bi bi-facebook text-dark mx-1"></i> <i class="bi bi-linkedin text-dark mx-1"></i> <i class="bi bi-instagram text-dark mx-1"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- FAQ ends -->
+
+<!-- Contact starts -->
+<section class="contact section-padding" id="contact">
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header text-center pb-5">
+                    <h2 class="page-title">Contact Us</h2>
+                    <p>View the source code of this project on Github:</p>
+                    <a href="https://github.com/MohamedLahlami/DreamTravel---A-tourism-guide-web-app-with-AI-assistance-for-Marrakesh">
+                        <i class="bi bi-github">Github</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- contact ends -->
+
+<footer class="bg-dark p-3 text-center">
+    <div class="container">
+        <p class="text-white" style="margin-bottom: 0px; font-size: large;">All Right Reserved By DreamTravel 2024</p>
+    </div>
+</footer>
+
+{% endblock %}

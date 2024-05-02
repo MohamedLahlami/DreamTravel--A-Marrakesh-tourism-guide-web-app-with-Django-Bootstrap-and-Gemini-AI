@@ -1,0 +1,34 @@
+{% extends 'basetemp.html' %}
+{% load static %}
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center offset-navbar page-title">HOTELS</h1>
+    <p class="lead text-center col-12 col-sm-10 mx-auto mx-sm-auto mt-3">
+        Retreat to Marrakesh's luxurious havens where ancient architecture meets modern comfort, where every room is a sanctuary of elegance and tranquility, and where hospitality is woven into every intricate detail.
+    </p>
+    {% if hotels %}
+    <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+      {% for hotel in hotels %}
+      <div class="col-12 col-md-12 col-lg-4">
+        <div class="card pb-2">
+            <img src="{% static 'img/koutoubia.jpg' %}" class="card-img-top" alt="hotel" />
+            <div class="card-body">
+              <h4>{{ hotel.name }}</h4>
+              <p class="card-text">
+                <dl class="row">
+                    <dt class="col-sm-5">Amenities: </dt>
+                    <dd class="col-sm-7">{{ hotel.amenities }}</dd>
+                    <dt class="col-sm-5">Starting price: </dt>
+                    <dd class="col-sm-7">{{ hotel.starting_price }} MAD</dd>
+                </dl>
+              </p>
+              <div class="mb-1 d-flex justify-content-around">
+                <a href="{% url 'hotelDetail' hotel.id %}" class="detail-link">Discover</a>
+              </div>
+            </div>
+        </div>
+      </div>
+      {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}
