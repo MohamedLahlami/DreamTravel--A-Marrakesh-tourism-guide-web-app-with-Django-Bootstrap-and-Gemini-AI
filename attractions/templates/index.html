@@ -1,4 +1,4 @@
-{% extends 'basetemp.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
 <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleIndicators">
@@ -160,63 +160,5 @@
         </div>
     </div>
 </section><!-- featured ends -->
-
-<!-- FAQ starts -->
-<section class="FAQ section-padding" id="FAQ">
-    <div class="container">
-        <div class="section-header text-center pb-5">
-            <h2 class="page-title">FAQ</h2>
-            <p><h6>Here are some of the most asked questions by fellow tourists in <span class="detail-link">Marrakesh</h6></p>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-12 col-12">
-                <div class="about-img"><img class="img-fluid FAQ-img" src="{% static 'img/riad2.jpg' %}"></div>
-            </div>
-            <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-3">
-                <div class="about-text">
-                    <dl class="row">
-                        <dt>What is the best time to visit Marrakech?</dt>
-                        <dd>The best time to visit Marrakech is during the spring (March to May) or fall (September to November) when the weather is mild and pleasant.</dd>
-
-                        <dt>What is the currency used in Marrakech?</dt>
-                        <dd>The currency used in Marrakech, as well as throughout Morocco, is the Moroccan Dirham (MAD).</dd>
-                        
-                        <dt>Do I need a visa to visit Marrakech?</dt>
-                        <dd>Visitors from many countries can enter Morocco visa-free for stays of up to 90 days. However, it's always best to check visa requirements based on your nationality before traveling.</dd>
-                        
-                        <dt>What are the must-visit attractions in Marrakech?</dt>
-                        <dd>Some of the must-visit attractions in Marrakech include Jardin Majorelle, Djemaa el-Fna square, Bahia Palace, Saadian Tombs, and the Koutoubia Mosque.</dd>
-
-                        <dt>Is it safe to visit Marrakech?</dt>
-                        <dd>Marrakech is generally a safe city for tourists. However, as with any destination, it's important to remain vigilant, especially in crowded areas, and to take precautions against petty theft.</dd>
-
-                        <dt>What is the traditional Moroccan cuisine like?</dt>
-                        <dd>Traditional Moroccan cuisine is flavorful and diverse, featuring dishes such as tagine (slow-cooked stews), couscous, pastilla (a savory pie), and various grilled meats. Don't miss trying Moroccan mint tea, a staple beverage.</dd>
-
-                        <dt>What should I wear when visiting Marrakech?</dt>
-                        <dd>Marrakech is a conservative city, so it's best to dress modestly, especially when visiting religious sites. Women may want to wear loose-fitting clothing that covers the shoulders and knees, while men should avoid wearing shorts in certain areas.</dd>
-                    </dl>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!-- FAQ ends -->
-
-<!-- Contact starts -->
-<section class="contact section-padding" id="contact">
-    <div class="container mt-5 mb-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-header text-center pb-5">
-                    <h2 class="page-title">Contact Us</h2>
-                    <p>View the source code of this project on Github:</p>
-                    <a href="https://github.com/MohamedLahlami/DreamTravel---A-tourism-guide-web-app-with-AI-assistance-for-Marrakesh" class="detail-link">
-                        <i class="bi bi-github">Github</i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!-- contact ends -->
 
 {% endblock %}

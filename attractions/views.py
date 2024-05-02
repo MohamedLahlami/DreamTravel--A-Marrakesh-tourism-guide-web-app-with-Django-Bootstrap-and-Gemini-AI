@@ -14,11 +14,8 @@ os.environ['GOOGLE_API_KEY'] = "AIzaSyD44p4MRPNGzYFtAfjwh1jWbVC21UhcbMY"
 genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
 model = genai.GenerativeModel('gemini-pro')
 
-def temp(request):
-    return render(request, 'temp.html')
-
 def index(request):
-    return render(request, 'indextemp.html')  ##################
+    return render(request, 'index.html')  ##################
 
 def login_user(request):
     if request.user.is_authenticated:

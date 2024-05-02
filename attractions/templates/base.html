@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+	<meta charset="UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>DreamTravel</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="{% static 'style_chatbox.css' %}" rel="stylesheet">
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}" >
+
+
+</head>
+<body>
+    {% include 'navbar.html' %}
+    
+    <!--Flash messages-->
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% else %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+    
+
+    {% block content %}
+    <!-- Content is rendered here -->
+    {% endblock %}
+
+    <!--chatbot widget-->
+	{% include 'chatbot.html' %}
+
+        <!-- FAQ starts -->
+    <section class="FAQ section-padding" id="FAQ">
+        <div class="container">
+            <div class="section-header text-center pb-5">
+                <h2 class="page-title">FAQ</h2>
+                <p><h6>Here are some of the most asked questions by fellow tourists in <span class="detail-link">Marrakesh</h6></p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-12">
+                    <div class="about-img"><img class="img-fluid FAQ-img" src="{% static 'img/riad2.jpg' %}"></div>
+                </div>
+                <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-3">
+                    <div class="about-text">
+                        <dl class="row">
+                            <dt>What is the best time to visit Marrakech?</dt>
+                            <dd>The best time to visit Marrakech is during the spring (March to May) or fall (September to November) when the weather is mild and pleasant.</dd>
+
+                            <dt>What is the currency used in Marrakech?</dt>
+                            <dd>The currency used in Marrakech, as well as throughout Morocco, is the Moroccan Dirham (MAD).</dd>
+                            
+                            <dt>Do I need a visa to visit Marrakech?</dt>
+                            <dd>Visitors from many countries can enter Morocco visa-free for stays of up to 90 days. However, it's always best to check visa requirements based on your nationality before traveling.</dd>
+                            
+                            <dt>What are the must-visit attractions in Marrakech?</dt>
+                            <dd>Some of the must-visit attractions in Marrakech include Jardin Majorelle, Djemaa el-Fna square, Bahia Palace, Saadian Tombs, and the Koutoubia Mosque.</dd>
+
+                            <dt>Is it safe to visit Marrakech?</dt>
+                            <dd>Marrakech is generally a safe city for tourists. However, as with any destination, it's important to remain vigilant, especially in crowded areas, and to take precautions against petty theft.</dd>
+
+                            <dt>What is the traditional Moroccan cuisine like?</dt>
+                            <dd>Traditional Moroccan cuisine is flavorful and diverse, featuring dishes such as tagine (slow-cooked stews), couscous, pastilla (a savory pie), and various grilled meats. Don't miss trying Moroccan mint tea, a staple beverage.</dd>
+
+                            <dt>What should I wear when visiting Marrakech?</dt>
+                            <dd>Marrakech is a conservative city, so it's best to dress modestly, especially when visiting religious sites. Women may want to wear loose-fitting clothing that covers the shoulders and knees, while men should avoid wearing shorts in certain areas.</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- FAQ ends -->
+
+    <!-- Contact starts -->
+    <section class="contact section-padding" id="contact">
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header text-center pb-5">
+                        <h2 class="page-title">Contact Us</h2>
+                        <p>View the source code of this project on Github:</p>
+                        <a href="https://github.com/MohamedLahlami/DreamTravel---A-tourism-guide-web-app-with-AI-assistance-for-Marrakesh" class="detail-link">
+                            <i class="bi bi-github">Github</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- contact ends -->
+    <footer class="bg-dark p-3 text-center">
+        <div class="container">
+            <p class="text-white" style="margin-bottom: 0px; font-size: large;">All Right Reserved By DreamTravel 2024</p>
+        </div>
+    </footer>
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!--user status flag in js-->
+	<script type="text/javascript">
+		var userIsAuth = "{{ user.is_authenticated }}";
+	</script>
+
+    <!--Chatbot UI css-->
+    <script type="text/javascript" src="{% static 'chatbot.js' %}"></script>
+
+</body>
+</html>

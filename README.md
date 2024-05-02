@@ -4,4 +4,5 @@ After cloning the project, creating and connecting **dreamtravel** database and 
 The source code contains an API key for google generative AI, for the purposes of this assignment, it is recommended that you provide your own API key.
 
 ## Project information
-This project was developed for the end of year project assignment (PFA) - supervised by PR. MOHAMMED AMEKSA
+This project was developed for the end of year project assignment (PFA) - supervised by **PR. MOHAMMED AMEKSA**
+contributers to this project: [Asmaa El Meziane](https://github.com/asmel99), [Salma Jermoun](https://github.com/salmajer) and [Hafsa El Bahtari](https://github.com/hafssa1230)
